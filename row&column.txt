@@ -1,0 +1,43 @@
+ import java.util.Random;
+
+public class Matrix {
+private int[][] matrix;
+private int rows;
+
+public Matrix() {
+    matrix = new int[3][3];
+    rows = 3;
+}
+
+public Matrix(int size) {
+    matrix = new int[size][size];
+    rows = size;
+}
+
+
+public void fill() {
+    Random r = new Random();
+
+    for (int i = 0; i < this.rows; i++) {
+        for (int j = 0; j < this.rows; j++) {
+            this.matrix[i][j] = r.nextInt();
+        }
+    }
+}
+
+public void clear() {
+    for (int i = 0; i < this.rows; i++) {
+        for (int j = 0; j < this.rows; j++) {
+            this.matrix[i][j] = 0;
+        }
+    }
+}
+
+public static void swap(Matrix a, Matrix B) {
+
+int[][] tmp = a.matrix;
+    a.matrix = b.matrix;
+    b.matrix = tmp;
+}
+}
+ 
